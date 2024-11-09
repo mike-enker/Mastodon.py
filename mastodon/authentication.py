@@ -321,7 +321,7 @@ class Mastodon(Internals):
         """
         if username is not None and password is not None:
             params = self.__generate_params(locals(), ['scopes', 'to_file', 'code', 'refresh_token'])
-            params['grant_type'] = 'password'
+            params['grant_type'] = 'client_credentials'
         elif code is not None:
             params = self.__generate_params(locals(), ['scopes', 'to_file', 'username', 'password', 'refresh_token'])
             params['grant_type'] = 'authorization_code'
